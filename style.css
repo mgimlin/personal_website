@@ -2,4 +2,54 @@
     font-family: 'Arial';
 }
 
-/* TODO: */
+a, a:visited {
+    color: black;
+}
+
+.navigation-bar {
+    text-align: center;
+    padding: 20px 30px;
+    background-color: #500000;
+}
+
+.navigation-bar > a {
+    color: white;
+}
+
+.greeting-box {
+    background-color: #EEEEEE;
+    padding: 20px;
+    text-align: center;
+}
+
+.greeting-text {
+    display: inline-block;
+    width: 400px;
+    margin: 10px;
+    vertical-align: middle;
+}
+
+.greeting-image {
+    display: inline-block;
+    vertical-align: middle;
+
+    width: 300px;
+    height: 300px;
+}
+
+.personal-info-box {
+    padding: 20px;
+    text-align: center;
+}
+
+.personal-info-text {
+    display: inline-block;
+    width: 500px;
+    margin: 10px;
+    text-align: justify;
+    vertical-align: top;
+}
+
+.personal-info-text > h3 {
+    text-align: center;
+}
