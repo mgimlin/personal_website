@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #game-board {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+    <!-- website navigation -->
+    <p>
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="qualifications.html">Qualifications</a>
+        <a href="service.html">Service</a>
+        <a href="ai_generated_page.html">ChatGPT Page</a>
+    </p>
+
+  <canvas id="game-board" width="400" height="400"></canvas>
+  <script>
+    const canvas = document.querySelector("#game-board");
+    const ctx = canvas.getContext("2d");
+    let x = 0;
+    let y = 0;
+    let dx = 10;
+    let dy = 0;
+    let foodX = Math.floor(Math.random() * canvas.width / 10) * 10;
+    let foodY = Math.floor(Math.random() * canvas.height / 10) * 10;
+    let snake = [{x, y}];
+
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < snake.length; i++) {
+        ctx.fillStyle = "green";
+        ctx.fillRect(snake[i].x, snake[i].y, 10, 10);
+      }
+      ctx.fillStyle = "red";
+      ctx.fillRect(foodX, foodY, 10, 10);
+      x += dx;
+      y += dy;
+      snake.unshift({x, y});
+      snake.pop();
+      if (x === foodX && y === foodY) {
+        foodX = Math.floor(Math.random() * canvas.width / 10) * 10;
+        foodY = Math.floor(Math.random() * canvas.height / 10) * 10;
+        snake.push({});
+      }
+      if (x < 0 || x >= canvas.width || y < 0 || y >= canvas.height) {
+        alert("Game Over");
+        clearInterval(gameInterval);
+      }
+    };
+
+    document.onkeydown = (event) => {
+      switch (event.keyCode) {
+        case 37:
+          dx = -10;
+          dy = 0;
+          break;
+        case 38:
+          dx = 0;
+          dy = -10;
+          break;
+        case 39:
+          dx = 10;
+          dy = 0;
+          break;
+        case 40:
+          dx = 0;
+          dy = 10;
+          break;
+      }
+    };
+
+    const gameInterval = setInterval(draw, 100);
+  </script>
+</body>
+</html>
