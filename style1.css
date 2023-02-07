@@ -36,11 +36,17 @@ a, a:visited {
 /* greeting section on index.html */
 
 .temp {
-    background-color: yellow;
     width: 100%;
     text-align: center;
     padding-top: 100px;
     padding-bottom: 80px;
+
+    background-image: url("images_and_resume/tamu_background.jpg");
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    background-color: #EEEEEE;
 }
 
 .greeting-box {
@@ -48,7 +54,7 @@ a, a:visited {
     background-color: white;
     padding: 20px;
     text-align: center;
-    width: 750px;
+    width: 750;
     border-bottom: 10px solid #500000;
 }
 
@@ -57,6 +63,14 @@ a, a:visited {
     width: 400px;
     margin: 10px;
     vertical-align: middle;
+}
+
+.greeting-text img {
+    vertical-align: middle;
+}
+
+.greeting-text a {
+    text-decoration: none;
 }
 
 .greeting-image {
@@ -70,19 +84,42 @@ a, a:visited {
 /* about me section on index.html */
 
 .personal-info-box {
-    padding: 20px;
-    text-align: center;
+    padding-top: 20px;
     width: 100%;
 }
 
-.personal-info-text {
-    display: inline-block;
-    width: 600px;
-    margin: 10px;
-    text-align: justify;
-    vertical-align: top;
+.personal-info-box h3 {
+    /* background-color: yellow; */
+    width: 100px;
+    margin: auto;
+    color: #500000;
 }
 
-.personal-info-text > h3 {
+.personal-info-box hr {
+    border: 2px solid #500000;
+}
+
+.personal-info-text {
+    width: 700px;
+    margin: 10px;
+    text-align: justify;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.personal-info-text h3 {
+    text-align: center;
+}
+
+/* portfolio.html */
+
+.project {
+    width: 500px;
+    text-align: justify;
+    margin: auto;
+}
+
+h2 {
     text-align: center;
 }
